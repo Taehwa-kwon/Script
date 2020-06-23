@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		var cal = function(a,b){ //3.
+			
+			this.num1 = Number(a); 
+			this.num2 = NUmber(b);
+			
+			this.plus = function() { //4.
+				
+				return this.num1 + this.num2;
+				
+			}
+			
+			this.minus = function () {
+				return this.num1 - this.num2;
+				
+			}
+			this.devide = function () {
+				if (this.num2==0){
+					this.num2 =1; 
+				}
+				return this.num1 / this.num2
+			}
+		}
+		function show(){
+			var num1 = document.getElementById("num1").value; // 1. num1의 값을 받아온다.
+			var num2 = document.getElementById("num2").value;
+			var c = new cal(num1,num2); //2.
+			
+			var plus_result = c.plus();
+			var minus_result = c.minus();
+			var devide_result = c.devide();
+			
+			var strHTML = "a + b = " + plus_result;
+			 strHTML += "a - b = " + minus_result;
+			 strHTML += "a / b = " + devide_result;
+			
+			document.getElementById("result").innerHTML ="strHTML"; 
+			
+		}
+	</script>
+</head>
+<body>
+	<div>
+	<input type="text" id="num1" size ="8" style="width:100px;"/>
+	<input type="text" id="num2" size ="8" style="width:100px;"/>
+	<input type="button" value="확인" onclick="show()">
+	</div>
+	
+	<div id = "result">
+	
+	</div>
+	
+
+</body>
+</html>

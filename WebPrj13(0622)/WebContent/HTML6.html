@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var arr = [1,2,3,4,5];//얘는 주소를 
+	var arr2 = [];
+	arr2[0] = 1;
+	arr2[1] = 2;
+	arr2[2] = 3;
+	arr2[3] = 4;
+	arr2[4] = 5;
+	
+	/* var arr3 =arr; // 이 문법이 arr은 현재 객체배열 ->call by reference
+	arr					-배열변수		arr3
+	0	1	2	3	4   -배열변수		0	1	2	3	4	
+	1	2	3	4	5				=arr[0] =arr[1] */ //Excel처럼 주소값 
+	
+	var arr3 =arr;
+	arr3[2] =300;
+	alert(arr[2]); //300임 ..이게 call by reference 
+	
+	var a = 9; //이건 그냥 복사..Excel에서 
+	var c =a; 
+	alert(c); //9
+	c = 5;
+	alert(a); //9
+	alert(c); //5 
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

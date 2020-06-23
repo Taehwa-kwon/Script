@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+	$(document).ready(
+			
+		 function(){
+			
+			 $("#info").dialog(
+				{
+					 autoOpen : false,
+					 show : {
+						 effect : "blind",
+						 duration : 2000
+					 }
+				}	 
+				);
+			 $("#infoBtn").click(		
+			 	function(){
+					$("#info").dialog("open");
+								
+				});	
+			 $("#infoBtn2").click(		
+			 	function(){
+					$("#info").dialog("close");
+								
+				});	
+			
+		});
+</script>
+
+</head>
+<body>
+<div id="info" title="메세지">
+
+  <p>하이루</p>
+
+</div>
+
+<div>
+	<input type="button" value="확인" id="infoBtn">
+	<input type="button" value="확인" id="infoBtn2">
+</div>
+
+</body>
+</html>
+
+
+
+

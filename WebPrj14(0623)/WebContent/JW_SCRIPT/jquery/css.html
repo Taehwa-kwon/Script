@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>	.ttt{border:1px solid blue; font-size:30px; width:300px; height:40px;  }</style>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script>
+	function t(){
+		$("#ddd").css("font-size","40px"); //jquery방법
+		
+		//document.getElementById("ddd").style.fontSize = "40px";
+		//document.getElementById("test").size = 40;
+		document.getElementById("test").style = "border:3px solid red";
+		document.getElementById("test").type = "button";
+	}
+</script>
+
+</head>
+<body>
+
+	<div id="ddd">first</div>
+	<input type = "text" id="test" size="12"/>
+	<input type="button" value="확인" onclick="t()">
+
+</body>
+</html>

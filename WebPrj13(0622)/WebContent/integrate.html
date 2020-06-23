@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	
+	
+	
+	
+function checkNumber(){
+	var objJumin = document.getElementById("jumin1");
+	var objJumin2 = document.getElementById("jumin2");
+	
+	var checkVal = "0123456789";
+	
+	var juminVal = objJumin.value; //objJumin에 입력되는 값. 
+
+	
+/* Q. 계속해서 주민번호와 성별의 alert이 연달아서 나오는데 어떻게 해결할 것인가.? 
+Q. 1.주민번호를 입력하시오 -> 주민번호 길이 확인 -> 암호자리에 문자 X 확인 
+Q. IF안에 ELSE 가 여러번 반복해야할 것 같은데... 
+
+*/
+	
+	if( objJumin.value.length==0 || objJumin2.value.length==0){
+			alert("주민번호를 입력하시오")
+			return;
+		}
+	
+		for(var i=0; i<juminVal.length; i++){
+			var str = juminVal.substring(i,i+1);
+			
+			//checkVal.indexOf(str);  //checkVal을 제외한 값을 입력할 경우 indexOf는 -1이 출력됌
+			 if(juminVal.length<6){
+				alert("주민번호 길이가 올바르지 않습니다.");
+			}
+			else if(checkVal.indexOf(str)==-1){
+				alert("숫자만 가능합니다.");
+				objJumin.value = ""; //숫자만 가능합니다. 다음에 공백을 뜨게 만듬. 
+				return;
+				}
+			}
+		
+	
+	
+	
+      if(juminVal.length == 6){
+          objJumin2.focus();//강제실행. 
+       }
+	 
+}
+	
+	function checkValue(){
+
+		var pwd = document.getElementById("password");
+		var Cpwd = document.getElementById("checkPassword");
+		
+		//&& and 교집합 || or 합집합 
+		if ( pwd.value.length==0){
+			
+			alert("암호를 입력하시오");
+			pwd.value="";
+			return; 
+		} else if ( Cpwd.value != pwd.value){
+			alert("암호가 일치하지 않습니다.")
+			Cpwd.value="";
+			pwd.value="";
+			return;
+			}
+		
+		checkNumber();
+		
+		
+		
+		
+	
+		/* 	
+		var jumin = document.getElementsByName("jumin");
+		var Firstjumin = document.getElementById("jumin1");
+		var Lastjumin = document.getElementById("jumin2");
+		
+		var CheckJumin = "0123456789";
+		var inFjumin = Firstjumin.value;
+		var inLjumin = Lastjumin.value;
+		
+		 if( Firstjumin.value.length==0 || Lastjumin.value.length==0){
+			alert("주민번호를 입력하시오")
+			return; 
+		
+			for (var i = 0; i < inFjumin.length; i++) {
+			var str1 = inFjumin.substring(i,i+1);
+			
+			if(CheckJumin.indexOf(str1) == -1 ){
+				alert("허용하지 않는 범위에 있습니다.");
+				Firstjumin.value="";
+				return ; 
+			}
+		}
+		
+	
+		
+		} */
+		
+		
+		
+		
+		
+		var a=0;
+		
+		var objGens = document.getElementsByName("gender")
+		
+		for (var i = 0; i < objGens.length; i++) {
+			if(objGens[i].checked==true)
+				a+=1;
+		}
+		
+		if(a==0){
+			alert("성별을 체크하시오");
+			return;
+		}
+		
+		
+		
+		
+		var objJob = document.getElementById("job");
+		if(objJob.value.length==0){
+			alert("직업을 체크하시오");
+			return;
+		}
+		
+		var objIntro = document.getElementById("con");
+		
+		if(objIntro.value.length <9){
+			alert("자기소개 최소10자 이상을 적으시오")
+			objIntro ="";
+			return ;
+		}
+	}
+	
+	//이렇게 뺴는게 좋기는 함... 각각 분할해서 
+	/* window.onload=function(){
+		
+	}
+ */
+</script>
+
+</head>
+<body>
+<form name="" action="" method="" >
+	<div>
+		아이디 : <input type="text" name="id" id="id" size="10" maxlength="10" placeholder="아이디를 입력하시오 "/>
+	</div>
+
+	<div>
+		패스워드 : <input type="password" name="password" id="password" size="10" maxlength="10" placeholder="비밀번호를 입력하시오"/>
+		확인  : <input type="password" name="password" id="checkPassword" size="10" maxlength="10" placeholder="비밀번호 재확인"/>
+	</div>
+	
+	<div>
+		성 : <input type="text" name="userName" id="userFirstName" size="3" maxlength="5">
+		이름 :<input type="text" name="userName" id="userLastName" size="3" maxlength="5">
+	</div>
+	
+	<div>
+		주민번호 : <input type="text" size="6" maxlength="6" id="jumin1" name="jumin">
+		-
+		<input type="password" size="7" maxlength="7" id="jumin2"  name="jumin"> 
+	</div>
+	
+	<div>
+		성별 : 
+		남자  <input type="radio" name="gender" value="M"/>
+		여자  <input type="radio" name="gender" value="F"/>
+	</div>
+	
+	<div>
+		직업 : <select name="job" id="job">
+			<option value="">직업 선택</option>
+			<option value="j001">직장인</option>
+			<option value="j002">학생</option>
+			<option value="j003">공무원</option>
+			<option value="j004">무직</option>
+		</select>
+	</div>
+	
+	<div>
+		<textarea cols="50" rows="6" id="con" placeholder="간단한 자기소개를 하시오 "></textarea>
+	</div>
+	
+	<div>
+		<input type="button" value="SignUp" onclick="checkValue()">
+	</div>
+	
+</form>
+
+</body>
+</html>

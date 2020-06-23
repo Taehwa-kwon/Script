@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+<script>
+		
+		$(document).ready(
+			function() {
+			 $( "#button" ).button();
+			$( "#button-icon" ).button({
+				icon: "ui-icon-gear",
+				showLabel: false
+			});
+		
+			
+			$( "#radioset" ).buttonset(); 
+			}
+	);
+	
+	
+
+</script>
+
+</head>
+<body>
+
+
+<div>
+<button id="button">확인</button>
+<button id="button-icon">An icon-only button</button>
+</div>
+
+<form style="margin-top: 1em;">
+	<div id="radioset">
+		<input type="radio" id="radio1" name="radio"><label for="radio1">Choice 1</label>
+		<input type="radio" id="radio2" name="radio" checked="checked"><label for="radio2">Choice 2</label>
+		<input type="radio" id="radio3" name="radio"><label for="radio3">Choice 3</label>
+	</div>
+</form>
+
+<input type="radio" id="Man" name="gender" />
+   <label for="Man">남자</label>
+
+
+<label><input type="radio" id="" name="gender" />여자</label>
+
+</body>
+</html>

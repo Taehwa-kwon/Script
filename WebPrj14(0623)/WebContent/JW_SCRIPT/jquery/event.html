@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	 .btn { width:100px; height:25px; border:1px solid #444444;
+         border-radius:10px; background-color:#cccccc }
+	
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script>	
+/* $(
+        function(){  이게 body가 실행되고 진행되는 이벤트 // window.onload와는 다른것 --> */
+        	
+      /*   	window.onload = function(){ }; 			//자바 스크립트 코드;
+        	$(document).ready(function() { }); 		//제이쿼리 코드; 
+        	$(function() {  }); 					//더 간단한 제이쿼리 코드 
+        	사용 예시 :  $(선택자).동작함수();									*/
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	//https://wiserloner.tistory.com/380
+$(
+		function(){        	
+           // 마우스 클릭시 작동   
+          
+           $("#bttn").click(
+              function(){
+                 $("#show").html("click");
+                 $("#show").css("background-color", "pink");
+              }      
+           );
+           
+           // 마우스 가져갔을경우 작동
+           $("#bttn").mouseenter(
+              function(){
+                 $("#show").html("mouseEnter");
+                 $("#show").css("background-color", "red");
+              }      
+           );
+           
+           // 마우스가 밖에 있을때 작동
+           $("#bttn").mouseout(
+              function(){
+                 $("#show").html("mouseout");
+                 $("#show").css("background-color", "#cccccc");
+              }      
+           );
+           
+           // 마우가 안에 들어갔을 때 작동 := mouseenter
+           $("#bttn").mouseover(
+                 function(){
+                    $("#show").html("mouseover");
+                    $("#show").css("background-color", "yellow");
+                 }      
+              );
+           // double click
+           $("#bttn").dblclick(
+              function(){
+                 $("#show").html("dblclick");
+                 $("#show").css("background-color", "blue");
+              }      
+           );
+           
+           
+        }
+        
+     );
+
+	/*
+	var obj = document.getElementById("bttn");
+	$(obj) $(      )  괄호안에는 객체만 들어올 수 있다.
+	*/
+</script>
+
+</head>
+<body>
+	<div id = "show"></div>
+	<div id ="bttn" class="btn">확인 </div>
+</body>
+</html>

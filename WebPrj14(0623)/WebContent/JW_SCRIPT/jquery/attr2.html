@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script>
+	function t(){
+		//alert($("#test").attr("type")); //특정 객체의 속성값을 확인할때 사용한다. 
+		
+		/* var isResult = $("#hobby").attr("checked");//앞에 is가 붙는거는 boolean타입을 의미한다.
+		console.log(isResult);
+		
+		if(isResult){
+		$("#test").val("체크를 하셨습니다.");
+		}
+		
+		else {
+			console.log("-------------");
+			$("#test").val("체크를 해주세요");
+		} */
+		$("#ddd").attr("style"); //attr의 기능을 확인하기 위함 
+		
+	}
+</script>
+
+</head>
+<body>
+	<input type ="text" id="test" size="15"/>
+	<input type="checkbox" id="hobby" checked="checked"/>자기 
+	<input type ="button" value="확인" onclick="t()"/>
+	<div style="border:1px solid red; width:200px; height:30px"; id="ddd">
+	aaa
+	</div>	
+
+</body>
+</html>

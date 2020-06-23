@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "../js/jquery-3.5.1.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<style>
+ .style1 {font-size:18px; border:1px solid #444444; float:left; width:150px;}
+</style>
+<script type="text/javascript">
+	var departs = [
+	{did : "d001", dname : "철학과", dqty :30},	
+	{did : "d002", dname : "수학과", dqty :30},	
+	{did : "d003", dname : "물리학과", dqty :30},	
+	{did : "d004", dname : "경제학과", dqty :30},	
+	{did : "d005", dname : "경영학과", dqty :30}	
+	];
+	
+	
+	$(document).ready(
+		function(){
+			var strHTML ="";
+			$.each(departs,
+				function(index,item){
+					strHTML += "<option value='"+item.did+"'>"+item.dname +"("+item.dqty+ ")</option>"
+				
+				}		
+			);
+					
+					$("#departs").html(strHTML);
+					
+					$("#departs").selectmenu();
+			
+		}	
+	)
+	
+	
+</script>
+</head>
+<body>
+	<div>
+		<div class="style1">학과</div>
+		<div class="style1">
+			<select id = "departs" style="width:150px;"><!-- style="width:150px; height:150px" -->
+				 <option value="d001">철학과(30)</option> <!-- 보이는건 철학과 이지만 값은 d001을 선택한다. --> 
+			</select>
+		</div>
+		
+	</div>
+	
+
+</body>
+</html>

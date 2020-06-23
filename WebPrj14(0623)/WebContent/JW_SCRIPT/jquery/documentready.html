@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+	var strHTML = "";
+	
+		/* https://docu94.tistory.com/37 */
+		
+		//이게 일반버전(여러번의 이벤트 실행을 기다림 )
+		$(document).ready(
+			function (){
+				strHTML +="READY";
+			}		
+		);
+	
+		//이게 위에것을 간단하게 만듬 (여러번의 이벤트 실행을 기다림 )
+		$(function() {
+			strHTML += "jquery func";
+		})
+		
+		function result(){
+			$("#test").html(strHTML);
+			
+		}
+</script>
+</head>
+<body>
+	<div id="test"></div>
+	<input type="button" value="버튼" onclick="result()"/>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style>
+		.rec1{
+			width:300px; height: 300px;
+			background-color:yellow;
+			position: absolute; /* relative 상대적인   absolute순서. */
+			font-size:40px;
+			top:100px;
+			left:100px;
+			z-index:100; /*순서..이게 없으면 빨간색이 맨밑인데.. */
+		}
+		.rec2{
+			width:500px; height: 200px;
+			background-color:blue;
+			position: absolute;
+			font-size:40px;
+			top:100px;
+		}
+		.rec3{
+			width:200px; height: 500px;
+			background-color:green;
+			position: absolute;
+			font-size:40px;
+			top:100px;
+		}
+		
+		
+	</style>
+	
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	
+	<script>
+		var px="";
+		function ani(){
+			for (var i = 0; i < 100; i++) {
+				px= (100+i)+"px";
+				$(".rec1").css("left",px)
+				
+			}
+		}
+	</script>
+
+</head>
+<body>
+	<div class="rec1">1</div>
+	<div class="rec2"></div>
+	<div class="rec3"></div>
+	<div>
+		<input type="button" value="확인" onclick="ani()">
+	</div>
+
+</body>
+</html>

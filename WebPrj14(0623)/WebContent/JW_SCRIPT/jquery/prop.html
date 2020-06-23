@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		.gen
+	</style>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+	<script>
+		function t(){
+			alert($("#gender1").prop("checked")); //$ = document.getElementById
+			alert($("#gender1").prop("type"));
+			
+			
+			//유효성 검사
+			$(".gen").each(
+				function(index,item){
+					alert(item.prop("checked"));	
+				}		
+			);
+			
+		}	
+	</script>
+</head>
+<body>
+	<input type="radio" id="gender1" name="gender" class="gen" checked />
+	<input type="radio" id="gender2" name="gender" class="gen" />
+	<input type="button" value="확인" onclick="t()"/>
+</body>
+</html>

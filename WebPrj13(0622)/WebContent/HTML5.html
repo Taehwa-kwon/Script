@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#show{
+	font-size : 12;
+	font-weight:border;
+	 }
+	
+	
+	
+</style>
+<script>
+function test(){
+	var arr=[];
+	arr[0]="홍길동";
+	arr[1]="전우치";
+	arr[2]="백설공주";
+	
+	var obj = null;
+	for(var i=0; i<arr.length; i++){
+		//var obj = document.getElementById("show") //이렇게 하면 for문이 3번돌면서 3개의 변수가 만들어진다.
+		obj = document.getElementById("show");
+		obj.innerHTML +="<div>"+ arr[i]+"</div>";
+	}
+}
+</script>
+</head>
+<body>
+	<input type="text" size="8" name="num1" id="num1">
+	<input type="text" size="8" name="num2" id="num2">
+	<input type="text" size="8" name="num3" id="num3">
+	<div id="show"></div>
+	<input type="button" value="확인" onclick="test()">
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		function a() {
+		//var objDiv = document.getElementByTagName("div"); //body안에 2가지의 div가 있다.그러면 복수의 s가 필요하다 
+		var objDiv = document.getElementsByTagName("div");
+		//여기서 tagName에 여러개의 div가 있으니깐 배열로 var objDiv변수가 생성된다.
+		//var objDiv는 어떤 형태인지 모르는데 위에 document.getElements를 복수의DIV를 보고 배열로 생성된다. 
+		
+		//objDiv[0].innerHTML = "0";
+		//objDiv[1].innerHTML = "1";
+		//objDiv[2].innerHTML = "2";
+		
+			for(var i = 0; i<objDiv.length; i++){
+				objDiv[i].innerHTML = i.toString();
+				//objDiv[i].innerHTML = i; 도 가능  
+				}
+		}
+	</script>
+
+</head>
+<body>
+<row id="wrap">
+<div> <!-- 이렇게 큰 태그를 걸면 1개만 들어간다.. --> 	
+
+	<div>
+	<a name="menu" id="menu1">메뉴1</a> <!-- 태그 속성 텍스트로 구성 -->
+	<a name="menu" id="menu2">메뉴2</a> <!-- 태그 속성 텍스트로 구성 -->
+	</div>
+	
+	<div>
+	<a name="menu" id="menu1">메뉴1</a> <!-- 태그 속성 텍스트로 구성 -->
+	<a name="menu" id="menu2">메뉴2</a> <!-- 태그 속성 텍스트로 구성 -->
+	</div>
+	
+	<div>
+	<a name="menu" id="menu1">메뉴1</a> <!-- 태그 속성 텍스트로 구성 -->
+	<a name="menu" id="menu2">메뉴2</a> <!-- 태그 속성 텍스트로 구성 -->
+	</div>
+	
+	<div>
+	<button>버튼 태그는 안쓰는게 좋다. </button>
+	<input type = "button" value="확인" onclick="a()"> 
+	</div>
+	
+</div>
+</row>	 
+</body>
+</html>

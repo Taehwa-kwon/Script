@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style> 
+	.menu1{
+		width:408px; background-color:red; height:70px; position:relative; 
+	}
+	.menu2{
+		width:100px; background-color:#dddddd; height:30px; display:block; float:left;
+		border : 1px solid blue; /*  앞에서 차근차근 하나해보기     맨뒤에 border가 들어가면 100+2(바깥테두리선 -> 그래서 menu1에 408로 바꿔야함)*/
+		text-align:center;
+		 padding : 10px 0px 0px 0px; /* 안쪽 */
+		 margin : 15px 0px 15px 0px; /* 마진이 제일밖에와 안쪽의 거리 */
+		  
+		/*  line-height: center; */ 
+/* 1.
+menu1이 50크기고 menu2가 40크기인데 paading을 top right bottom left 순으로 10을 주면 top에서 10을 밀어서 50사이즈가 된다.
+그러면 안맞으니깐 .menu2의 height를 30으로 줄여줘야함 . 그래서 center이 됌 
+
+2. menu1에 70이고 menu2가 height가 30이고 padding10을 주고 40이 되고 70-40 =30 이니깐 아래위로 15씩 주면 중앙정렬 ㅗ댐  		 
+ */		 
+	}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+<script>
+	function test(){
+		var obj = $(".menu1").children();
+		alert(obj.length);
+		
+		for(var i=0; i<obj.length; i++){
+			obj[i].innerHTML = "aaaa";
+		}
+		
+	}
+</script>
+
+</head>
+<body>
+	<div class="menu1"> <!-- 클래스 지정 -->
+		<span class="menu2">메뉴1 </span>
+		<span class="menu2">메뉴2 </span>
+		<span class="menu2">메뉴3 </span>
+		<span class="menu2">메뉴4 </span>
+	</div>
+	
+	<div>
+		<input type="button" value="확인" onclick="test()" id="btn"/>
+	</div>
+
+</body>
+</html>

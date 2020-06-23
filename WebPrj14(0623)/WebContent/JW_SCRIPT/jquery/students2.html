@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+	var students = [ //AJON
+		{ sid:"s001",sname:"홍길동1",age:"1",gender:"남"},
+		{ sid:"s002",sname:"홍길동2",age:"2",gender:"여"},
+		{ sid:"s003",sname:"홍길동3",age:"3",gender:"남"},
+		{ sid:"s004",sname:"홍길동4",age:"4",gender:"여"},
+		{ sid:"s005",sname:"홍길동5",age:"5",gender:"여"}
+		
+	];
+	
+	$(document).ready(
+		function(){
+		//1.조회 버튼의 click이벤트 등록하기
+		$("#search_btn").click(
+			function(){
+				searchFunc();		
+				
+			}
+		)
+			
+		}
+	
+	);
+	
+	var searchFunc = function(){
+		
+		var strHTML = "";
+		//1.for문 
+	 /* 	for(var i =0; i<=students.length;i++){
+				
+			strHTML += "<tr>" 
+			
+				strHTML += "<td width='150px' height='30px' align='center'>"
+				strHTML += students[i].sid;
+				strHTML += "</td>"
+				
+				strHTML += "<td width='150px' height='30px' align='center'>"
+				strHTML += students[i].sname;
+				strHTML += "</td>"
+				
+				strHTML += "<td width='50px' height='30px' align='center'>"
+				strHTML += students[i].age;
+				strHTML += "</td>"
+				
+				strHTML += "<td width='100px' height='30px' align='center'>"
+				strHTML += students[i].gender;
+				strHTML += "</td>"
+			
+			strHTML += "</tr>"  
+	 	} */
+		
+			//2.for each
+ 			
+			$.each(students,
+			
+					function(index,item){
+				strHTML += "<tr>" 
+					
+					strHTML += "<td width='150px' height='30px' align='center'>"
+					strHTML += item.sid;
+					strHTML += "</td>"
+					
+					strHTML += "<td width='150px' height='30px' align='center'>"
+					strHTML += item.sname;
+					strHTML += "</td>"
+					
+					strHTML += "<td width='50px' height='30px' align='center'>"
+					strHTML += item.age;
+					strHTML += "</td>"
+					
+					strHTML += "<td width='100px' height='30px' align='center'>"
+					strHTML += item.gender;
+					strHTML += "</td>"
+				
+				strHTML += "</tr>" 
+			
+				}
+			
+			
+			);//each
+			
+			 
+		
+		$("#searchTbl").html(strHTML);
+		//$("#searchTbl").append(strHTML);
+		
+	 	
+	}
+
+</script>
+
+</head>
+<body>
+	<table border="1" cellpadding="0" cellspacing="0" width="400" align="center" id=searchTbl>
+		<tr>
+			<td width="400px" align="right" height="40">
+				<input type="button" value="조회" id="search_btn">
+			</td>
+		</tr>
+	</table>
+	
+	<table border="1" cellpadding="0" cellspacing="0" width="400" align="center">
+		<tr>
+			<td width="100px" height="30px" align="center">
+			 아이디
+			</td>
+			<td width="150px" height="30px" align="center">
+			이름
+			</td>
+			<td width="50px" height="30px" align="center">
+			나이
+			</td>
+			<td width="100px" height="30px" align="center">
+			성별
+			</td>
+		</tr>
+		
+		<tr>
+			<td width="100px" height="30px" align="center">
+			 아이디
+			</td>
+			<td width="150px" height="30px" align="center">
+			이름
+			</td>
+			<td width="50px" height="30px" align="center">
+			나이
+			</td>
+			<td width="100px" height="30px" align="center">
+			성별
+			</td>
+		</tr>
+		
+		
+		
+	</table>
+</body>
+</html>

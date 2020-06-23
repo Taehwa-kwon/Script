@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.css1 {
+		width:300px; height:50px; border:1px solid #222222;
+	}
+</style>
+
+<script src = "../js/jquery-3.5.1.min.js"></script>
+
+<script>
+	var mans = [
+		{sid : "1", size:"250"},
+		{sid : "2", size:"255"},
+		{sid : "3", size:"260"},
+		{sid : "4", size:"265"},
+		{sid : "5", size:"270"},
+		{sid : "6", size:"275"},
+		{sid : "7", size:"280"}
+	];
+	
+	var womans =[
+		{sid : "11", size:"210"},
+		{sid : "12", size:"215"},
+		{sid : "13", size:"220"},
+		{sid : "14", size:"225"},
+		{sid : "15", size:"230"},
+		{sid : "16", size:"235"},
+		{sid : "17", size:"240"}
+	];
+	
+	
+	$(document).ready(
+		function(){
+			$('.css2').change(
+				function(){
+					var strHTML ="";
+					//남자를 선택했는지 여자를 선택했는지 어떻게 구분할수 있는지
+					//alert($("#gen1").value()) //이렇게 하면 안됌.. 왜냐하면 위에 css2는 변함없기 떄문에
+					if($("#gen1").prop("checked")){
+						//남자가 선택되었다면 select box에 삽입 .
+						$.each(mans,
+								function(index,item){
+									strHTML += "<option value='"+item.sid+"'>"+item.size+"</option>"	
+					})
+						
+					} 
+					else {
+						$.each(womans,
+								function(index,item){
+									strHTML += "<option value='"+item.sid+"'>"+item.size+"</option>"	
+					})
+						//alert("f");
+					}
+					$("#shoes").html(strHTML);
+					
+					
+				}//function()		
+			)//change()
+			$("#shoes").change(
+				function(){
+					/* var selectSize = $("#shoes").val(); */
+					var selectSize = $("#shoes option:selected").text();
+					var strMsg = "선택하신 사이즈는 " +selectSize + "입니다";
+					$("#msg").html(strMsg);
+					
+					$("#shoes").style="font-size:30px;"
+					/* $("#shoes").css = */
+				}		
+			);
+			
+		}//function();
+	
+	);//ready
+	
+</script>
+</head>
+<body>
+	<div >
+		<label><input type="radio" name="gender" value="M" class="css2" id="gen1"/>남자</label>
+		<label><input type="radio" name="gender" value="F" class="css2" id="gen2"/>여자</label>
+	</div>
+	
+	<div>
+		<select id="shoes">
+			<option value="11">210</option>
+			
+		</select>
+	</div>
+	
+	<div id="msg" class="css1">
+	
+	</div>
+</body>
+</html>
+
+<!-- //https://jqueryui.com/dialog/#animated -->

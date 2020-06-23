@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//이벤트 종류 click mouseover mouse
+	
+	function keyTest(){
+		var objJumin = document.getElementById("jumin1");
+		alert();
+	}
+	function checkNumber(){
+		var objJumin = document.getElementById("jumin1");
+		var objJumin2 = document.getElementById("jumin2");
+		
+		var checkVal = "0123456789";
+		
+		var juminVal = objJumin.value; //objJumin에 입력되는 값. 
+	
+		for(var i=0; i<juminVal.length; i++){
+			var str = juminVal.substring(i,i+1);
+			
+			//checkVal.indexOf(str);  //checkVal을 제외한 값을 입력할 경우 indexOf는 -1이 출력됌
+			if(checkVal.indexOf(str)==-1){
+				alert("숫자만 가능합니다.");
+				objJumin.value = ""; //숫자만 가능합니다. 다음에 공백을 뜨게 만듬. 
+				return;
+			}
+		}
+	      if(juminVal.length == 6){
+	          objJumin2.focus();//강제실행. 
+	       }
+	}
+</script>
+</head>
+<body>
+	<input type = "text" size="6" maxlength="6" onkeyup="checkNumber()" id="jumin1">
+	-
+	<input type = "text" size="7" maxlength="7" id="jumin2">
+</body>
+</html>

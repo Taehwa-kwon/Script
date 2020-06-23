@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+<style>
+	.menu{ height: 100px;  }
+	.submenu{width:180px;background-color:#E1E6F6; height:25px; border:1px solid #121212; }
+</style>
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+
+
+
+
+
+
+
+<script>
+
+var menus = [];
+
+menus = [
+	{menuid : 'm001' ,menu : '1번메뉴', menulink:'1.jsp'},
+	{menuid : 'm002' ,menu : '2번메뉴', menulink:'2.jsp'},
+	{menuid : 'm003' ,menu : '3번메뉴', menulink:'3.jsp'},
+	{menuid : 'm004' ,menu : '4번메뉴', menulink:'4.jsp'}
+];
+
+var menus2 = [];
+
+menus2 = [
+	{menuid : 'm005', menu : '즐겨찾기', menulink : '5.jsp'},
+	{menuid : 'm006', menu : '맛집', menulink : '6.jsp'},
+];
+
+var menus3 = [];
+menus3 = [
+	
+	{menuid : 'm007', menu : '고객센터', menulink : '7.jsp'},
+	{menuid : 'm008', menu : 'Q/A', menulink : '8.jsp'},
+	{menuid : 'm009', menu : '더보기', menulink : '9.jsp'},
+];
+
+var submenus = [];
+submenus[0] = menus; //menus라는 배열 변수를 다시 submenus배열에 넣는다. 
+submenus[1] = menus2;
+submenus[2] = menus3;
+
+alert(submenus.length);
+	
+
+$(document).ready(
+		function(){
+			 //---------------------------------- 지역변수
+			
+			var strMenuHTML = ""; 
+			
+			//---------------------------------- accordion 실행
+
+			$("#accordion").accordion();
+			
+			 //---------------------------------- 메뉴실행 코딩
+			 
+			 var objMenus = $(".menu") // 방법2
+			 
+			 for(var i=0; i<submenus.length; i++){
+				 
+				// var strID = "#menu" + (i+1).toString(); 방법1
+				 
+				 $.each(submenus[i],
+						 function(index,item){
+					 		strMenuHTML += "<div class='submenu'><a href='" + item.menulink + "'>" + item.menu + "</a></div>"
+					 }
+				 );
+				
+				
+				
+				
+				//$(strID).html(strMenuHTML); 방법1
+				 $(objMenus[i]).html(strMenuHTML);//방법2
+				 strMenuHTML = "";
+				 
+			 }
+			 
+			 
+			 
+			 //1번째 메뉴
+			/* $.each(menus,   						사용 예시 :  $(선택자).동작함수();
+					function(index,item){
+						strMenuHTML += "<div class='submenu'><a href='"+item.menulink +"'>" + item.menu+ " </a></div>"
+			});
+			
+			 
+			 
+			$("#menu1").html(strMenuHTML);
+			
+			//2번쨰 메뉴 
+			strMenuHTML = ""; //바로위에서 엄청많이 썻기때문에 초기화를 한번 해준다. 
+			$.each(menus2,
+					function(index,item){
+				
+					strMenuHTML +="<div class='submenu'> <a href='"+item.menulink+"'>"+ item.menu+"</a> </div>"; 
+				
+					}		
+			);
+			$("#menu2").html(strMenuHTML);
+			
+			
+			//3번째 메뉴 
+			strMenuHTML = ""; //바로위에서 엄청많이 썻기때문에 초기화를 한번 해준다. 
+			$.each(menus3,
+					function(index,item){
+				
+					strMenuHTML +="<div class='submenu'> <a href='"+item.menulink+"'>"+ item.menu+"</a> </div>"; 
+				
+					}		
+			);
+			$("#menu3").html(strMenuHTML); */
+		}
+		
+		)
+		
+		
+</script>
+
+
+</head>
+
+
+
+<body>
+<!-- Accordion -->
+   <h2 class="demoHeaders">Accordion</h2>
+   <div style="width:200px">
+   <div id="accordion">
+								<!-- 여기도 스크립트로 올려보자 -->
+     	 <div>First</div>
+      	 <div id = "menu1" class="menu" style="padding:0px 0px 0px 0px">
+      	 	<div> <a href="1.jsp">1번 메뉴</a></div>
+         </div>
+
+      	 <div>Second</div>
+		 <div id="menu2" class="menu" style="padding:0px 0px 0px 0px">
+		 	<div> <a href="1.jsp">1번 메뉴</a></div>
+		 </div>
+      
+         <div>Third</div>
+  		 <div id="menu3" class="menu" style="padding:0px 0px 0px 0px"> </div>
+  		 
+   </div>
+   </div>
+
+  <!-- <script>
+  $( "#accordion" ).accordion();
+  </script> -->
+   
+</body>
+</html>

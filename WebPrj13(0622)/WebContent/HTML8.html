@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var obj = {	
+			a : 4,
+			b : 5,
+			c : [2,56,78,4556] //배열도 객체 함수도 객체니깐 여기에 함수도 가능하다는거지 .
+			/* d : function(a,b,c[0]){
+				return a+b;
+			} */
+			d : function(){
+				return this.a + this.b + this.c[0];
+			}
+			
+	};
+	
+	alert(obj.c[0]);
+	alert(obj.d())
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

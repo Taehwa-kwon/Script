@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function checkValue(){
+		var a=0;
+		
+		var objGens = document.getElementsByName("gender"); //객체를 가져온다. 
+		//if(objGens[0].value !="" || objGens[1].value != "") { 현재 value의 값은 존재하기 떄문에  
+			
+		  for(var i = 0; i<objGens.length; i++){
+			if(objGens[i].checked ==true )
+// 체크 하나도 안하면 false // 0이 man 1이 woman 인데 0이 체크되어서 true면 1이 증가하고 , 1이 체크되어서 true 면 1이 증가하고
+// 체크안하면 false가 뜨고 a가 증가안하니깐 아래 if에서 진행된다. 
+			a += 1; //		
+			}
+		
+		if( a==0 ){
+			alert("성별을 체크하시오 ");
+			return; //이게 없으면 성별과 직업을 입력안하고 submit하면 성별직업의 alert이 다 뜬다.  
+		}  
+		
+		/* if(objGens.checked == false) {
+			alert("성별을 체크하시오 ")
+			return ;
+			}	
+		 */
+		
+	 	var objJob = document.getElementById("job");
+		if(objJob.value.length ==0){
+			alert("직업을 체크하시오");
+			return;
+		}
+		
+		var objHobby = document.getElementsByName("hobby");
+		var hCount = 0;
+		for (var i = 0; i < objHobby.length; i++) {
+			if(objHobby[i].checked){
+				hCount +=1;
+			}
+		}
+		
+		  if(hCount ==0){
+		         alert("취미를 선택하세요!");
+		         return 
+		      }
+		}
+		
+			
+	
+</script>
+
+</head>
+<body>
+	<form name="" action="" method="">
+	
+	<div>
+		아이디 : <input type="text" name="mid" id="mid" size="1" maxlength="9" placeholder="아이디를 입력하시오"/> 	
+		<!-- 열고 닫는게 없다는것은 single tag이다.// 사이즈는 text의 크기를 말하는거고 maxlength는 글자수  value는 초기값인것 같은데 아님 -->
+	</div>
+	
+	<div>
+		성별 :<input type="radio" name="gender" value="M" />남자 
+			<input type="radio" name="gender" value="F"/>여자
+		<!-- VALUE의 의미는 선택해서 SUBMIT을 하면 서버로 값을 보내는 값. -->	
+		<!-- name을 일치시켜야 둘중의 하나만 선택가능  -->
+		<!-- checked을 속성으로 붙이면 페이지가 로드될때 미리 선택될 input요소를 명시 -->
+	</div>
+	
+	<div>
+		직업 : 
+			<select name="job" id="job">
+			<option value="">직업 선택</option> 
+			<option value="j001">직장인</option>
+			<option value="j002">학생</option>
+			<option value="joo3">무직</option>
+			<!-- 사실 여기서 db의 코드값을 받아야한다. -->
+			</select>
+	</div>
+	
+	<div>
+		취미 : 
+		<input type="checkbox" name="hobby" value="1" checked="checked">독서
+		<input type="checkbox" name="hobby" value="2">운동
+		<input type="checkbox" name="hobby" value="3">게임
+	</div>
+	
+	<div>
+		<textarea cols="50" rows="6" id ="con"></textarea>
+	</div>
+	
+	<div>
+		<input type="button" value="확인" onclick="checkValue()">
+	</div>	
+	
+	</form>
+</body>
+</html>

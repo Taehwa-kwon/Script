@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		a{ display:block; width:100px; height:30px;}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	<script>
+		
+		function eachTest(){
+			
+			var students = [
+				{ name : "홍길동",age : 34},
+				{ name : "전우치",age : 25},
+				{ name : "백설공주", age: 24}
+			];
+			
+			
+			/* $("#test").children().each(
+			function(index,item){ //index 0~2 번쨰와 item 는 href를 말함 
+				alert(item); 
+				
+			}); */
+			
+			var strHTML = "";
+			$.each(
+				students,function(index,item){	//item은 students 의 { name : "홍길동",age : 34} 이 전체가 되는거임 
+					//alert(item.name[0]);
+					
+					strHTML += "<div>";
+					strHTML += item.name + "은" + " " +item.age + "살 입니다.";
+					strHTML += "</div>";
+				}
+				
+			);
+			$("#students").html(strHTML);
+			
+		}
+	</script>
+	
+</head>
+<body>
+	<div id = "test">
+		<a href="http://www.naver.com">네이버</a>
+		<a href="http://www.naver.com">다음</a>
+		<a href="http://www.naver.com">구글</a>
+	</div>
+	
+	<div id="students">
+		
+	</div>
+	
+	<div>
+		<input type="button" value="확인" onclick="eachTest()"/>
+	</div>
+	
+</body>
+</html>

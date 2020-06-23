@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script type="text/javascript">
+	/* $("#btn").click();  //이렇게하면 위에서부터 읽히니깐 div안에 id=btn을 못찾지.. */
+	
+	$(document).ready(		//그래서 이렇게 바디를 다읽을떄까지 기다렸다가 실행한다.
+		$("#btn").click(	//$ (    ) <<-- 괄호안에 객체를 호출하고 click이라는 메소드를 실행한다. 
+			function(){
+				name : "",
+				age : ""
+			}		
+		)
+	);
+
+
+</script>
+
+</head>
+<body>
+	<div id="btn"></div>
+	<div mouseover="" mouseout=""></div> 
+</body>
+</html>
