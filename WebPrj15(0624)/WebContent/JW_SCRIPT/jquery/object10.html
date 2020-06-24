@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+   .inp{border:1px solid red; font-size:20px;}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+   
+   var createSelect = function(){
+      
+      var strHTML = "";
+      
+      for(var i=1;i<=10;i++){
+         strHTML += "<option value='" + i+ "'>" + i + "</option>"
+      }
+      
+      $("#rCount").html(strHTML);
+      
+   }
+   
+   $(document).ready(
+         
+         function(){
+            createSelect();
+            
+            $("#rCount").change(
+                  function(){
+                     var selectedValue = $("#rCount").val();
+                     
+                     objInput.vType = "button";
+                     objInput.vID = "rtID";
+                     objInput.vName = "rName";
+                     objInput.vCls = "inp";
+                     objInput.vSize = "30";
+                     objInput.vVal = "메롱";
+                     
+                     objInput.vCount = Number(selectedValue);
+                     
+                     
+                     var returnHTML = objInput.createInput();
+                     
+                     $("#rID").html(returnHTML);
+                  }
+            );
+         }
+   
+   );
+   
+   var objInput = {
+      
+         vType : "",
+         vID : "",
+         vName : "",
+         vCls : "",
+         vSize : 10,
+         vVal : "",
+         vChecked : false,
+         
+         vCount : 1,
+         
+         createInput : function(){
+            
+            var strHTML =  "";
+            
+            for(var i=0 ;i<this.vCount; i++){
+            strHTML +=   "<input type='" + this.vType + 
+                               "' name='" + this.vName + 
+                               "' id='" + this.vID + 
+                               "' class='" + this.vCls + 
+                               "' value='" + this.vVal + 
+                               "' size='" + this.vSize + "'/>";
+            }
+                               
+            return strHTML;
+            
+                               
+                               
+         }
+         
+   };
+   
+</script>
+</head>
+<body>
+   <div>
+      추천수 : <select id="rCount">
+               
+            </select>
+   </div>
+   <div>
+      <div>
+         추천아이디
+      </div>
+      <div id="rID">
+      
+      </div>
+   </div>
+</body>
+</html>

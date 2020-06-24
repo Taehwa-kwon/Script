@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script>
+	function checkValue(){
+		var objGender = document.getElementsByName("gender");
+		
+		var radioVal = $("input:radio[name='gender']:checked").val();
+		console.log(radioVal);
+		
+		var checkedCnt = 0;
+		for (var i = 0; i < objGender.length; i++) {
+			if(objGender[i].checked){
+				
+				checkedCnt +=1;
+			}
+		}
+		
+		if(checkedCnt ==0){
+		alert("성별을 선택해 주세요");
+		return;
+		}
+	}
+</script>
+</head>
+<body>
+	<form action="" method="">
+		<label><input type="radio" name="gender" id="male" value="M" />남자</label>
+		<label><input type="radio" name="gender" id="female" value="F"/>여자</label> <!-- checked의 값은 boolean이다 -->
+		
+		<input type ="button" value="확인" onclick="checkValue()"/>
+		<!-- <select></select>
+		<textarea></textarea> -->
+		
+		<div id="div1">
+		</div>
+	</form>
+
+</body>
+</html>

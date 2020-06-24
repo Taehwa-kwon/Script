@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   .menu{background-color:#dddddd; border: 0 0 0 1px   };
+   .menu2{font-size: 12px;}
+</style>
+<script>
+   //언어
+   //변수
+   //반복
+   //변수  - 데이터 타입 -> 메모리 공간
+   //인터프리터 언어
+   //변수에 값을 할당할때 메모리에 올라온다.
+   //숫자차입 
+   //문자타임
+   //boolean
+   //객체
+   //반복문
+   function chg_style(a){
+      //DOM
+      /* if(a==1){
+         var objMenu = document.getElementById("menu1");
+         objMenu.style ="background-color :red;";
+      }
+      if(a==2){
+         var objMenu = document.getElementById("menu1");
+         objMenu.style ="background-color :red;";
+      }
+      if(a==3){
+         var objMenu = document.getElementById("menu1");
+         objMenu.style ="background-color :red;";
+      } */
+      
+      
+      
+      /* var objMenu = document.getElementById("menu" + a);
+      objMenu.style = "background-color : red;"; */
+      
+      var objMenu = document.getElementsByName("menus");
+      objMenu[a].style = "background-color : red;";
+   }
+</script>
+
+</head>
+<body>
+   <div>
+      <div class ="menu"name = "menus"id = "menu3" onmouseover="chg_style(0)" id="menu1" name="menus">
+         <a href = "">메뉴1</a>
+      </div>
+      <div class ="menu" name = "menus" id = "menu2" onmouseover="chg_style(1)" id="menu1" name="menus">
+         <a href = "">메뉴2</a>
+      </div>
+      <div class ="menu"name = "menus"id = "menu3" onmouseover="chg_style(2)" id="menu1" name="menus">
+         <a href = "">메뉴3</a>
+      </div>
+   </div>
+   
+</body>
+</html>

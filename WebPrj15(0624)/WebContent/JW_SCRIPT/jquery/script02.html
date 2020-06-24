@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function show(a){
+		
+		var msgs= [];
+		msgs[0] = "1번클릭";
+		msgs[1] = "2번클릭";
+		msgs[2] = "3번클릭";
+		
+		var objMsg = document.getElementById("msg");
+		objMsg.innerHTML = msgs[a];
+		
+	};
+</script>
+</head>
+<body>
+	<div>
+		<!-- <a href="" onclick="show()">1번</a> a태그는 onclick을 쓰면 안됌..ㅠ.ㅠㅠ -->
+		<a href="javascript:show(0)" name="link">1번</a> 
+		<a href="javascript:show(1)" name="link">2번</a> 
+		<a href="javascript:show(2)" name="link">3번</a> 
+	</div>
+	<div id="msg"></div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src = "../js/jquery-3.5.1.min.js"></script>
+
+<script>
+
+	var objCup = { 
+		 name : "",
+		 radius : 0,
+		 height : 0,
+		 color : "",
+		 num : 0,
+		
+		makeCup : function(){
+		}
+		,
+		showCup : function(vid,val){
+			var imgName = val + ".jpg";
+			var strHTML = "<img src='./image/"+imgName+"'/>";
+			$("#" + vid).html(strHTML);
+		}
+	};
+	
+	$(document).ready( 
+		function(){
+			//name = 여러 개의 요소에 지정 가능  - Slector 역할 수행 불가능 ('[name="name value"]') - css에서 사용 불가능 
+			
+			var objs = $("input[name='nCup']"); //3. 이렇게 하는순간 자바스크립트고 
+			$(objs).change( // 3.이렇게 해서 jquery로 바꿔주고 
+					function(){
+						//alert(11);  //1.이렇게해서 먼저 되는지 확인하기
+						//2.어떤게 선택됐는지 알아야함.
+						
+						
+						/* 				for문 방법					*/
+						for(var i=0; i<objs.length;i++){ 	//4.
+							if($(objs[i]).prop("checked")){ //4. 내가 바꿀때마다 뭐가바뀌는지 알아보게.
+							var checkedValue = $(objs[i]).val();//5.내가 바꾼 value값 찾기
+							
+							/* 				showcup으로 올린다.					*/	
+							/* var imgName = val + ".jpg";
+							
+							var strHTML = "<img src='./image/"+imgName+"'/>";
+							
+							$("#result" vid).html(strHTML); */
+							/* 				showcup 종료					*/	
+							
+							objCup.showCup("result",checkedValue);
+							}
+						}
+						/* 				for문 종료					*/
+						
+						
+						/* 				for each 방법					*/
+					 	$(objs).each(
+								function(index,item){
+									//alert(item.value); //아까 제이쿼리랑 스크립트랑 차이..  
+									if(item.checked)
+									if($(item).prop("checked")){
+									objCup.showCup("result",item.value);
+									}
+								}
+					)//for each()
+					
+				}
+			);
+			
+		}		
+	);
+</script>
+
+
+</head>
+<body>
+	<div>
+		<input type="radio" id ="nID1"  class="" name="nCup" value="1"/>1번컵 
+		<input type="radio" id ="nID2"  class="" name="nCup" value="2"/>2번컵 
+		<input type="radio" id ="nID3"  class="" name="nCup" value="3"/>3번컵 
+	</div>
+	
+	<div id="result">
+	</div>
+	
+	
+	
+	<!-- <img src="./image/1.jpg" >.하나는 내 위치를 나타냄 -->
+	
+	<!-- <img src="../image/2.jpg"> 다른 폴더에서 넘어갈떄 -->
+
+</body>
+</html>

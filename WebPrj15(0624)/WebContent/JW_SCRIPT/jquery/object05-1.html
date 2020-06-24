@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src = "../js/jquery-3.5.1.min.js"></script>
+
+<script>
+
+	var objCup = { 
+		 name : "",
+		 radius : 0,
+		 height : 0,
+		 color : "",
+		
+		makeCup : function(){
+			
+			
+		}
+	
+		,
+		
+		showCup : function(){
+			
+		}
+		 
+	};
+	
+	$(document).ready(
+		function(){
+			$("input[name='nCup']").change(
+					function(){
+						//alert(11);  //이렇게해서 먼저 되는지 확인하기 	
+					}
+			);
+			
+		}		
+	);
+</script>
+
+
+</head>
+<body>
+	<div>
+		<input type="radio" id ="nID1"  class="" name="nCup" value="1"/>1번컵 
+		<input type="radio" id ="nID2"  class="" name="nCup" value="2"/>2번컵 
+		<input type="radio" id ="nID3"  class="" name="nCup" value="3"/>3번컵 
+	</div>
+	
+	<div id="result">
+	</div>
+	
+	
+	
+	<img src="./image/1.jpg" ><!-- .하나는 내 위치를 나타냄 -->
+	
+	<!-- <img src="../image/2.jpg"> 다른 폴더에서 넘어갈떄 -->
+
+</body>
+</html>

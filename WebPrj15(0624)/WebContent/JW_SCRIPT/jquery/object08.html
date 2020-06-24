@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script>
+   var animals = ['돼지','사슴','고양이'];
+   
+   var arr = [];
+   arr[0] = "돼지";
+   arr[1] = "사슴";
+   arr[2] = "고양이";
+   arr[3] = "강아지";
+   
+   function show(){
+      var strHTML = "";
+      
+      
+      for(var i = 0;i<arr.length;i++){
+         strHTML += "<div>" + arr[i] + "</div>";
+         $("#list").html(strHTML);   
+      }
+      
+   }
+   
+   
+   var objAnimal = {
+      number : 0,
+      name : "",
+      
+      showAnimals : function(){
+         var strHTML = "";
+            
+         for(var i = 0;i<arr.length;i++){
+            strHTML += "<div>" + arr[i] + "</div>";
+            $("#list").html(strHTML);   
+         }
+         
+      }
+      ,
+      addAnimal : function(){
+         arr.push(this.name);
+      }
+      
+      
+   }; //objAnimal
+
+   
+   $(document).ready(
+         function(){
+            $("#btnSea").click(
+               function(){
+                     //show();
+                     objAnimal.showAnimals();
+                  }      
+               );
+            
+            $("#btnAdd").click(
+                  function(){
+                     objAnimal.name = $("#aName").val();
+                     objAnimal.addAnimal();
+                     objAnimal.showAnimals();
+                     $("#aName").val("");
+                  }
+            );
+         }
+   );
+</script>
+</head>
+<body>
+   <div>
+      <input type="text" id="aName" />
+      <input type="button" value="추가" id="btnAdd" />   
+   </div>
+   <div>
+      <input type="button" value="조회" id="btnSea" />
+   </div>
+   <div id="list">
+      <!-- 
+         1. 돼지
+         2. 사슴
+         3. 고양이
+      
+       <div>1.돼지</div>
+       <div>2.사슴</div>
+       <div>3.고양이</div>
+        -->
+   </div>
+</body>
+</html>

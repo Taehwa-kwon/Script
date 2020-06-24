@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src = "../js/jquery-3.5.1.min.js"></script>
+
+<script>
+
+	var objCal = {
+		num1 :0,
+		num2 :1,
+		
+		funcPlus : function(){
+			return this.num1+this.num2; //this를 빼먹으면 안된다... !!!!!!!
+		},
+		
+		funcMinus : function(){
+			return this.num1-this.num2;
+		},
+		
+			
+	};
+	
+	$(document).ready(
+		function(){
+			//1.event 
+			$("#btnSum").click(
+				function(){
+					var a=Number($("#num1").val());//number타입으로 바꿔준다.
+					var b=Number($("#num2").val());
+					
+					objCal.num1=a; //객체.속성 = a    순서는 a가 객체.속성으로 들어감
+					objCal.num2=b;
+
+					
+					
+					var strHTML="";
+					strHTML += objCal.num1 + " + " + objCal.num2 + " = " + objCal.funcPlus();
+					strHTML += "";
+					strHTML += objCal.num1 + " + " + objCal.num2 + " = " + objCal.funcMinus();
+					strHTML += "";
+					
+					
+					$("#result").html(strHTML); //input태그가 아니라서 html이다.
+				}
+					
+			
+			)
+		}		
+	)
+		
+	
+</script>
+
+</head>
+<body>
+	
+	<div>
+	<input type="text" value="" id="num1" size ="10" class="" name="" style="font-size:20px;">
+	<input type="text" value="" id="num2" size ="10" class="" name="" style="font-size:20px;">
+	<input type="button" value="확인" id="btnSum"/>
+	
+	</div>
+	
+	
+	<div id="result">
+	
+	</div>
+
+</body>
+</html>

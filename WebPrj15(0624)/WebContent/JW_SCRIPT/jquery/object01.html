@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src = "../js/jquery-3.5.1.min.js"></script>
+
+<script>
+		//return 의 차이
+			//최종적으로 2번방법으로 하면 코드가 계속 분산되어진다. 그래서 불편함 증가!!!
+		//funcPlus1
+		//이건 계산의 목적
+	var funcPlus1 = function(a,b){
+		return a+b;
+	}
+		//funcPlus2
+		//이건 어떻게 보면 출력의 목적이 되는거고
+	var funcPlus2 = function(a,b){
+		var c= a+b; //이 값을 보내주지는 못하다. 그래서 출력을 여기서 해야한다.
+		$("#result2").val(c)
+	}
+	
+	$(document).ready( //이 문장은 body안에 DOM이 읽혀야 실행되는 이벤트다.
+		function(){
+			$("#btnSum").click(
+					function(){
+						
+						//1.funcPlus1
+						var result = funcPlus1(7,8); //이렇게 하면 좋은게 ..
+						$("#Calculate").html(result); //val는 form,input 태그에 있는것 	 html은 div와   
+						
+						//var result2= funcPlus1(17,19);
+						//$("#result").val(result);
+						
+						//2.funcPlus2 
+						//funcPlus2(7,8);
+						funcPlus2(17,18);
+					});
+		}			//내가 해볼것 .. input에 값을 넣어서 ...........
+	)
+	
+</script>
+
+</head>
+<body>
+	<input type="text" value="" id="result" class="" name="" style="font-size:20px;">
+	<input type="text" value="" id="result2" class="" name="" style="font-size:20px;">
+	<input type="button" value="확인" id="btnSum"/>
+	
+	<div id="Calculate"> d</div>
+
+</body>
+</html>

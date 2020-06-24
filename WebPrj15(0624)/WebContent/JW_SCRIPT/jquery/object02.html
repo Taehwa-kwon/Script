@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src = "../js/jquery-3.5.1.min.js"></script>
+
+<script>
+	
+
+	var funcPlus = function (a,b){
+		return a+b
+	}
+	var funcMinus = function (a,b){
+		return a-b
+	}
+	var funcDevide = function (a,b){
+		return a*b
+	}
+	var funcMult = function (a,b){
+		return a/b
+	}
+	
+	$(document).ready(
+		function (){
+			$("#btnSum").click(
+				function(){
+					var a = Number($("#num1").val());
+					var b = Number($("#num2").val());
+					
+					var strHTML = "";
+					strHTML += "<div>";
+					strHTML += a + " + "+ b+" = " +  funcPlus(a,b);
+					strHTML += "</div>";
+					
+					strHTML += "<div>";
+					strHTML += a + " + " +b+" = " + funcMinus(a,b);
+					strHTML += "</div>";
+					
+					strHTML += "<div>";
+					strHTML += a + " + " +b+" = " + funcDevide(a,b);
+					strHTML += "</div>";
+					
+					strHTML += "<div>";
+					strHTML += a + " + " +b+" = " + funcMult(a,b);
+					strHTML += "</div>";
+					
+					$("#result").html(strHTML);
+					}		
+				
+			)
+		}		
+	)
+		
+	
+</script>
+
+</head>
+<body>
+	<div id="wrap">
+		<div>
+			<input type="text" value="" id="num1" size ="10" class="" name="" style="font-size:20px;">
+			<input type="text" value="" id="num2" size ="10" class="" name="" style="font-size:20px;">
+			<input type="button" value="확인" id="btnSum"/>
+		</div>
+		
+		<div id="result">
+		</div>
+	</div>
+</body>
+</html>

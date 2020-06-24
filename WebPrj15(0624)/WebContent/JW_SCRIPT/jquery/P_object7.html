@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+	
+	var Students= [
+		{sid : "s001", name:"손형호", age:1},
+		{sid : "s002", name:"서효성", age:2},
+		{sid : "s003", name:"송지현", age:3},
+		{sid : "s004", name:"권태화", age:4}
+	];
+	
+	var Student ={
+			sid :"",
+			name : "",
+			age :"",
+			
+			 addStudent : function(){
+				var row ={sid : this.sid , name : this.name, age : this.age};
+				Students.push(row);
+				
+			},
+			 showStudent : function(){
+				var strHTML ="";
+				$.each(Students,
+						function(index,item){
+					strHTML += "<div>";
+					strHTML += "<input type='checkbox' value='"+ item.sid + "'name='sid'>";
+					strHTML += " 이름 : "+item.name + "나이 : "+ item.age;
+					strHTML += "</div>";
+				
+				})
+					$("#output").html(strHTML);
+					
+					
+				
+				
+			},
+			 delStudent : function (){
+				var objs = $("input[name='sid'] ");
+				
+				$(objs).each(
+					function(index,item){
+						var check = $(item).prop("checked");
+						if(check)
+						{
+							Students.splice(index,1);	
+						}
+						
+					}		
+				)
+				this.showStudent();
+			}
+			
+		}	
+			
+	$(document).ready(
+		function(){
+			$("#btnOK").click(
+				function(){
+					Student.sid = $("#sid").val();
+					Student.name = $("#name").val();
+					Student.age = $("#age").val();
+					
+					Student.addStudent();
+				}		
+			
+			)
+			
+			$("#btnSea").click(
+					function(){
+						Student.showStudent();
+					})
+					
+			$("#btnDel").click(
+					function(){
+						Student.delStudent();
+					}		
+			)
+		}
+		
+		
+			)
+	
+</script>
+
+
+</head>
+<body>
+	<div>
+		<input type="text"  id="sid">
+	</div>
+	
+	<div>
+		<input type="text"  id="name">
+	</div>
+	
+	<div>
+		<input type="text"  id="age">
+	</div>
+
+	<div>
+		<input type="button" value="확인 : " id="btnOK">
+	</div>
+	
+	<div>
+		<input type="button" value="조회 : " id="btnSea">
+	</div>
+	
+	<div>
+		<input type="button" value="삭제 : " id="btnDel">
+	</div>
+	
+	<div id="output"></div>
+	
+	
+	
+	
+
+</body>
+</html>
