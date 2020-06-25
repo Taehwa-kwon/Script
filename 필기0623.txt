@@ -1,0 +1,22 @@
+DOM 
+
+DOCUMENT OF MODEL
+
+frameWork  - 스프링
+
+라이브러리 - 성적관리에서 이미 클래스가 잘 만들어 져있는데 그걸 참조하는것.(JQuery가 대표적 - 코딩이 단순하고, 효율적이라서 )
+
+Jquery - jQuery ui - easyUi 
+
+
+DOM형식과 JQuery형식 구별하기 !!! 
+
+
+jquery .attr 
+
+
+checkPassword();
+		checkNumber();
+		checkgender();
+		checkJob();
+		checkIntro();
